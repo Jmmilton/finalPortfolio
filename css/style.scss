@@ -1,0 +1,200 @@
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+.outer-wrapper {
+  width: 400vh;
+  height: 100vw;
+  transform: rotate(-90deg) translateX(-100vh);
+  transform-origin: top left;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: absolute;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 400vw;
+  transform: rotate(90deg) translateY(-100vh);
+  transform-origin: top left;
+}
+
+.slide {
+  height: 100vh;
+  width: 100vw;
+  scroll-snap-align: start;
+  position: relative;
+}
+
+.one {
+  background: #041e40;
+}
+
+.two {
+  background: #203f59;
+}
+
+.three {
+  background: #486773;
+}
+
+.four {
+  background: #8f9fa6;
+}
+
+/* Main */
+
+.main {
+  text-align: center;
+}
+
+.main h1 {
+  margin: auto;
+  margin-top: 30vh;
+  display: block;
+  font-family: "Maven Pro", sans-serif;
+  line-height: 1.5;
+}
+
+.main h6 {
+  margin: auto;
+  margin-top: 5vh;
+  display: block;
+  font-family: "Maven Pro", sans-serif;
+  line-height: 1.5;
+}
+
+.top {
+  font-size: 60px;
+  color: #8f9fa6;
+}
+
+.bottom {
+  font-size: 20px !important;
+  font-weight: 100;
+  color: #8f9fa6;
+}
+
+/* Arrow */
+
+body {
+  background-color: #111;
+}
+
+.arrow {
+  cursor: pointer;
+  height: 120px;
+  left: 95%;
+  position: absolute;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  transition: transform 0.1s;
+  width: 80px;
+
+  $transition-time: 0.15s;
+
+  &-top,
+  &-bottom {
+    background-color: #666;
+    height: 4px;
+    left: -5px;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+
+    &:after {
+      background-color: #fff;
+      content: "";
+      height: 100%;
+      position: absolute;
+      top: 0;
+      transition: all $transition-time;
+    }
+  }
+
+  &-top {
+    transform: rotate(45deg);
+    transform-origin: bottom right;
+
+    &:after {
+      left: 100%;
+      right: 0;
+      transition-delay: 0s;
+    }
+  }
+
+  &-bottom {
+    transform: rotate(-45deg);
+    transform-origin: top right;
+
+    &:after {
+      left: 0;
+      right: 100%;
+      transition-delay: $transition-time;
+    }
+  }
+
+  &:hover & {
+    &-top:after {
+      left: 0;
+      transition-delay: $transition-time;
+    }
+
+    &-bottom:after {
+      right: 0;
+      transition-delay: 0s;
+    }
+  }
+
+  &:active {
+    transform: translateX(-50%) translateY(-50%) scale(0.9);
+  }
+}
+
+/* About */
+
+h2 {
+  font-size: 40px;
+  margin: 0 auto;
+  padding-top: 50px;
+  padding-bottom: 30px;
+  text-decoration: underline;
+  color: rgb(0, 0, 0);
+  font-family: "Maven Pro", sans-serif;
+}
+
+.about {
+  width: 100%;
+  /* height: 100%; */
+  min-width: 100%;
+  min-height: auto;
+  max-width: 100%;
+  text-align: center;
+}
+
+.about p {
+  width: 50%;
+  margin: 0 auto;
+  font-family: "Roboto", sans-serif;
+  line-height: 2em;
+  font-size: 18px;
+  letter-spacing: 0.2px;
+}
+
+.bottom {
+  padding-top: 25px;
+  text-decoration: underline;
+}
+
+.about-wrapper {
+  padding-bottom: 50px;
+}
